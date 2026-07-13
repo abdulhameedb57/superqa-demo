@@ -1,0 +1,22 @@
+name: SuperQA Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run SuperQA Tests
+        uses: superqa-ai/superqa-githubaction@v1
+        with:
+          api_key: ${{ secrets.SUPERQA_API_KEY }}
+          project_name: 'APM Kingstrack'
+          test_run_name: 'Login flow'
