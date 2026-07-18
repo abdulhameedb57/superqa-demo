@@ -12,7 +12,7 @@ jobs:
       - name: Run SuperQA test plan
         uses: SuperQA-ai/superqa-githubaction@main
         env:
-          SUPERQA_PARALLEL_RUN: 'false'
+          SUPERQA_PARALLEL_RUN: 'true'
           SUPERQA_SKIP_NOTIFICATIONS: 'true'
         with:
           api_key: ${{ secrets.SUPERQA_API_KEY }}
