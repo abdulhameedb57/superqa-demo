@@ -1,22 +1,23 @@
-name: SuperQA Tests
+name: SuperQA GitHub Action Integration Test
 
 on:
   push:
-    branches: [ main, develop ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  test:
+  superqa-integration-test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run SuperQA Tests
-        uses: superqa-ai/superqa-githubaction@v1
+      - name: Run SuperQA test plan
+        uses: SuperQA-ai/superqa-githubaction@main
+        env:
+          SUPERQA_PARALLEL_RUN: 'false'
+          SUPERQA_SKIP_NOTIFICATIONS: 'true'
         with:
           api_key: ${{ secrets.SUPERQA_API_KEY }}
-          project_name: 'APM Kingstrack'
-          test_run_name: 'Login flow'
+          project_name: 'APM kingstrack'
+          test_plan_name: 'superqagithubactiontesting'
+          environment_name: 'production'
+          base_url: 'https://mvt.apmkingstrack.com'
