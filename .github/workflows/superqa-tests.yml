@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  superqa-integration-test:
+ superqa-integration-test:
     runs-on: ubuntu-latest
     steps:
       - name: Run SuperQA test plan
@@ -19,4 +19,4 @@ jobs:
           project_name: 'APM kingstrack'
           test_plan_name: 'superqagithubactiontesting'
           environment_name: 'production'
-          base_url: 'https://mvt.apmkingstrack.com'
+          base_url: 'https://app.superqa.ai'
