@@ -18,5 +18,5 @@ jobs:
           api_key: ${{ secrets.SUPERQA_API_KEY }}
           project_name: 'APM kingstrack'
           test_plan_name: 'superqagithubactiontesting'
-          environment_name: 'production'
+          environment_name: 'prction'
           base_url: 'https://app.superqa.ai'
